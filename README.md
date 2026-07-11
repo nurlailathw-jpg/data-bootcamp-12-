@@ -1,5 +1,15 @@
 # SQLite-
 ```sql
+Column connect
+SELECT 
+	firstname, 
+    lastname,
+    firstname || '   ' || lastname AS fullname,
+    100 AS onehundret
+FROM customers
+
+
+ROUND Functions
 SELECT
     name AS song_name,
     milliseconds / 60000.0 AS minutes,
@@ -8,7 +18,7 @@ SELECT
 FROM tracks
 
 
-/* Regular expression
-GLOB sensitive case
-*/
-WHERE name LIKE'%k'
+
+There is a difference  between GLOB and LIKE
+- GLOB is case-sensitive
+- LIKE is case-insensitive:  eg.WHERE name LIKE'%k'
