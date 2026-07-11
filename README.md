@@ -1,5 +1,5 @@
 # data-bootcamp-12-
-
+```sql
 SELECT
     name AS song_name,
     milliseconds / 60000.0 AS minutes,
