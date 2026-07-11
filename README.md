@@ -1,6 +1,6 @@
 # SQLite-
 ```sql
-Column connect
+-- Column connect
 SELECT 
 	firstname, 
     lastname,
@@ -9,7 +9,7 @@ SELECT
 FROM customers
 
 
-ROUND Functions
+-- ROUND Functions
 SELECT
     name AS song_name,
     milliseconds / 60000.0 AS minutes,
@@ -19,6 +19,6 @@ FROM tracks
 
 
 
-There is a difference  between GLOB and LIKE
+-- There is a difference  between GLOB and LIKE
 - GLOB is case-sensitive
 - LIKE is case-insensitive:  eg.WHERE name LIKE'%k'
