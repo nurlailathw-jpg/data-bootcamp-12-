@@ -7,7 +7,7 @@ SELECT
     firstname || '   ' || lastname AS fullname,
     100 AS onehundret
 FROM customers
-
+------------------------------------------------------------------------------------------------
 
 -- ROUND Functions
 SELECT
@@ -16,9 +16,11 @@ SELECT
     ROUND(bytes/(1024*1024.0),2) AS mb
         --  ROUND Functions ; 2 : ทศนิยม 2 ตำแหน่ง
 FROM tracks
+------------------------------------------------------------------------------------------------
+
 
 SELECT 
-	name as song_name,
+	name AS song_name,
     ROUND(bytes/(1024*1024.0),2) AS mb 
     	-- ROUND Fuctions ; 2 : ทศนิยม 2 ตำแหน่ง
 FROM tracks
@@ -26,6 +28,8 @@ FROM tracks
 LIKE is sensitive case ไม่สนเคส
 LIKE is pattern matching 
 */
+
+------------------------------------------------------------------------------------------------
 
 -- There is a difference  between GLOB and LIKE
 - GLOB is case-sensitive
