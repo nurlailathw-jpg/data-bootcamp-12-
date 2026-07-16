@@ -61,7 +61,59 @@ SELECT * FROM  customers
 WHERE country = 'USA'
 
 
-------------------------------------------------------------------------------------------------
+--------------------------------------------------
+
+
+WITH all_customers AS ( 
+    SELECT * FROM customers
+)
+  -- WITH clause: Make Variable
+  
+SELECT `FirstName`, `Country`
+FROM all_customers
+WHERE `Country` = 'United Kingdom'
+
+
+----------------------------------------------
+FROM
+SELECT * FROM invoices
+WHERE invoicedate >=  '2029-01-01' AND invoicedate <='2009-10-31 08:0:00';
+ -- SQLite,  Not have text but have date , so just structure on iso
+
+-- ; Is make transection 1 2 ...
+
+SELECT * FROM customers 
+WHERE `Country` = 'USA';
+
+
+TO
+
+
+
+
+
+-- Let's make variable !
+
+WITH invoice_2009 AS (
+  SELECT * FROM invoices
+  WHERE invoicedate >=  '2009-01-01' AND invoicedate <='2009-12-31';
+), usa_usacustomers AS (
+  SELECT * FROM customers 
+WHERE `Country` = 'USA';
+)
+  
+
+ -- SQLite,  Not have text but have date , so just structure on iso
+
+-- ; Is make transection 1 2 ...
+
+
+
+
+
+
+
+
 
 
 ------------------------------------------------------------------------------------------------
