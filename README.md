@@ -116,11 +116,43 @@ WHERE `Country` = 'USA';
 
 
 
-------------------------------------------------------------------------------------------------
+--------------------------------------------------
 
 
 
-------------------------------------------------------------------------------------------------
+----------------------------------------------
+WITH all_customers  AS (
+  SELECT * FROM customers 
+)
+
+SELECT firstname , country 
+FROM all_customers
+WHERE country = 'Belgium'
+
+
+--------------------------------------------------
+-- Make Sub QUERY 
+WITH invoice_2009 AS  (
+  SELECT * FROM invoices
+  WHERE invoicedate >= '2009-01-01'
+    AND invoicedate <= '2009-12-31'
+), usa_customers AS (
+  SELECT * 
+  FROM customers 
+  WHERE country = 'USA'
+)
+
+-- Finding customers in 'USA', highest in 2009
+SELECT 
+  firstname, 
+  lastname, 
+  SUM(total) AS total_inv
+FROM usa_customers AS t1 
+JOIN invoice_2009 AS t2 
+ON t1.customerid = t2.customerid
+GROUP BY 1,2
+ORDER BY 3 DESC 
+----------------------------------------------
 
 
 
