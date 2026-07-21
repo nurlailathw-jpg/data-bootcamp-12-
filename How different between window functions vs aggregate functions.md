@@ -55,3 +55,5 @@ SELECT
   firstname, 
   country
 FROM customers;
+
+```
