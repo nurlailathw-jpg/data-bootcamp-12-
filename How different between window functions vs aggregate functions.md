@@ -35,7 +35,7 @@ WHERE company IS  NULL;
 ** Always have 'OVER'
 Prompt: 
   Can you list key Window functions in SQLite?
-  Can you show me a simple window function syntax
+  Can you show me a simple window function syntax?
 
 */
 
@@ -55,5 +55,21 @@ SELECT
   firstname, 
   country
 FROM customers;
+
+
+-- OVER(PARTITION BY country )
+
+SELECT 
+  ROW_NUMBER () OVER(PARTITION BY country ORDER BY firstname) AS row_numb,
+    -- OVER is the whole data set  and add (PARTITION BY country ) for the LIMIT keyword, 
+    -- (PARTITION BY country ) : Group ROW_NUMBER ()  BY country (Working like GROUP BY)
+    -- ORDER BY firstname : เรียงชื่อ firstname ภายในแต่ละ country ก่อน 
+  
+  firstname, 
+  country
+FROM customers ;
+  
+  
+
 
 ```
