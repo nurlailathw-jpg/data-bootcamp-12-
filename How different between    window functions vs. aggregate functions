@@ -1,4 +1,4 @@
-'''SQL
+```sql
 /*
   How different between 
   window vs. aggregate functions 
@@ -7,10 +7,10 @@
       - rank 
       - dense rank 
       - NTILE (for making segmentation)
-    * Aggregate functions: Is Aggregate Colum to Single Value
-
-
+    * Aggregate functions: Is Aggregate Column to Single Value
 */
+
+Aggregate functions
 SELECT 
   COUNT (*), -- นับจำนวนแถวทั้งหมด
   COUNT(Customerid),  -- COUNT comum อาจมี missing valua ได้ , จะไม่ได้ = count * 
@@ -19,7 +19,7 @@ SELECT
   AS  missing_data -- COUNT (*) - COUNT (colum) = missing valua (NULL)
 FROM customers;
 
--- WHERE clause to filter  NULL ,Missing Value 
+-- WHERE clause to filter  NULL, missing values 
 SELECT * FROM customers 
 WHERE company IS NOT NULL ;
 
@@ -31,6 +31,7 @@ WHERE company IS  NULL;
 
 /* 
 -- Window functions  
+** Always have 'OVER'
 Prompt: 
   Can you list key Window functions in SQLite?
   Can you show me a simple window function syntax
@@ -52,4 +53,4 @@ SELECT
   ROW_NUMBER () OVER() AS row_numb,
   firstname, 
   country
-FROM customers
+FROM customers;
